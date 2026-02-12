@@ -5,7 +5,7 @@
 ![Release](https://img.shields.io/badge/release-v0.1.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-yellow.svg)
 
-超级轻量的 s.ee WebDAV 客户端，支持把上传文件代理到 s.ee 并通过 WebDAV 暴露为目录与文件。
+超级轻量的 [s.ee](https://s.ee) WebDAV 客户端，支持把上传文件代理到 s.ee 并通过 WebDAV 暴露为目录与文件。
 
 ## 快速开始
 
