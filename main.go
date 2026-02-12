@@ -54,10 +54,10 @@ var (
 func loadConfig() error {
 	if _, err := os.Stat(CONFIG_FILE); os.IsNotExist(err) {
 		defaultConf := Config{
-			SeeToken: "",
-			Port:     "8080",
-			Username: "",
-			Password: "",
+			SeeToken: "YOUR_S.EE_TOKEN",
+			Port:     "13876",
+			Username: "admin",
+			Password: "123456",
 		}
 		data, _ := json.MarshalIndent(defaultConf, "", "  ")
 		os.WriteFile(CONFIG_FILE, data, 0600)
