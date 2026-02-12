@@ -1,7 +1,6 @@
 # 📁 S.EE WebDAV
 
 ![Go](https://img.shields.io/badge/go-1.20%2B-00ADD8.svg)
-![Build](https://github.com/lhl77/see-webdav/actions/workflows/go.yml/badge.svg?branch=main)
 ![Release](https://img.shields.io/github/v/release/lhl77/see-webdav.svg)
 ![License](https://img.shields.io/badge/license-MIT-yellow.svg)
 
