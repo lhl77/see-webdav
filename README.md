@@ -6,6 +6,8 @@
 
 超级轻量的 [s.ee](https://s.ee) WebDAV 客户端，支持把上传文件代理到 s.ee 并通过 WebDAV 暴露为目录与文件。
 
+# 使用必看！
+
 ## 快速开始
 
 1. 下载对应系统的版本，推荐服务器部署
@@ -42,16 +44,18 @@ $ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags='-s -w' -o smms-webdav
 ## 配置 (反向代理和进程守护)
 略，但是挺必要的。
 
+## 回调（图床适配）
+
+由于 WebDAV 协议没有回调，本项目内置了接口，但是需要手动调用，每个图床都不一样，详见： [LHL's Blog](https://blog.lhl.one/artical/542.html)
+
+**Q:不配置回调可以吗？**
+
+A:可以的，本项目支持GET方法访问图片，直接访问WEBDAV/<FILE_PATH>即可，会反代S.EE的图片，如果您的服务器线路不加可能会很慢。
+
 ## WebDAV 兼容
 
 - 支持方法：GET, HEAD, PUT, DELETE, PROPFIND, MKCOL, MOVE, OPTIONS。
 - 上传（PUT）时会把文件上传到 S.EE，然后在本地 SQLite（`smms.db`）记录 `original_path`（上传时文件名）, `path`（S.EE云端PATH）, `hash`（删除图片所用Hash）, `url`（反代所用URL）, `size`, `modified`, `is_dir`。
-
-## 适配图床
-由于 WebDAV 协议没有回调，本项目内置了接口，但是需要手动调用，每个图床都不一样，详见： [LHL's Blog](https://blog.lhl.one/artical/542.html)
-
-**Q:不配置回调可以吗？**
-A:可以的，本项目支持GET方法访问图片，直接访问WEBDAV/<FILE_PATH>即可，会反代S.EE的图片，如果您的服务器线路不加可能会很慢。
 
 ## 许可证
 
