@@ -46,7 +46,7 @@ $ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags='-s -w' -o smms-webdav
 
 ## 回调（图床适配）
 
-由于 WebDAV 协议没有回调，本项目内置了接口，但是需要手动调用，每个图床都不一样，详见： [LHL's Blog](https://blog.lhl.one/artical/542.html)
+由于 WebDAV 协议没有回调，本项目内置了接口，但是需要手动调用，每个图床都不一样，详见： [LHL's Blog](https://blog.lhl.one/artical/542.html#S.EE(SM.MS))
 
 **Q:不配置回调可以吗？**
 
